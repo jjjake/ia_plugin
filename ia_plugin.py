@@ -22,9 +22,15 @@ __copyright__ = 'Copyright 2015 Internet Archive'
 __all__ = ['ia_plugin']
 
 
+# `main()` must include two parameters: `argv` and `session`.
+# `argv` is a list of args passed in from `ia`, and `session` is an
+# `interenetarchive.ArchiveSession` object. These parameters don't
+# necessarily need to be used, necessarily, but must be specified.
 def main(argv=None, session=None):
+    # Parse the list of args passed in from `ia`.
     args = docopt(__doc__, argv=argv)
 
+    # Write your plugin!
     item = session.get_item(args['<identifier>'])
     fields = args['--field'].split('.')
     md = item.item_metadata
