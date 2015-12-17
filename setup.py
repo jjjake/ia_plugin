@@ -1,5 +1,4 @@
 from setuptools import setup
-from codecs import open
 
 from ia_plugin import __version__
 
@@ -15,9 +14,8 @@ setup(
     py_modules=['ia_plugin'],
     install_requires=[
         'internetarchive',
-        'docopt',
     ],
-    entry_points = {
+    entry_points={
         'internetarchive.cli.plugins': [
             'ia_plugin = ia_plugin',
         ],
@@ -25,4 +23,8 @@ setup(
             'ia-plugin = ia_plugin:main',
         ],
     },
+    tests_require=[
+        'pytest',
+        'pytest-pep8',
+    ],
 )
