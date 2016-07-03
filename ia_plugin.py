@@ -13,6 +13,7 @@ Examples:
 """
 from docopt import docopt
 
+# The module name must start with "ia_" in order for it to be recognized as a plugin.
 __title__ = __name__
 __version__ = '0.0.1'
 __url__ = 'https://github.com/jjjake/ia_plugin'
