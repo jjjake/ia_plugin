@@ -13,13 +13,14 @@ Examples:
 """
 from docopt import docopt
 
-__title__ = 'ia_plugin'
+__title__ = __name__
 __version__ = '0.0.1'
 __url__ = 'https://github.com/jjjake/ia_plugin'
 __author__ = 'Jacob M. Johnson'
+__email__ = 'jake@archive.org'
 __license__ = 'AGPL 3'
 __copyright__ = 'Copyright 2015 Internet Archive'
-__all__ = ['ia_plugin']
+__all__ = [__title__]
 
 
 # `main()` must include two parameters: `argv` and `session`.
