@@ -1,26 +1,27 @@
 from setuptools import setup
 
-from ia_plugin import __version__
+from ia_plugin import \
+    __title__, __version__, __url__, __author__, __email__, __license__, __doc__
 
 
 setup(
-    name='ia_plugin',
+    name=__title__,
     version=__version__,
-    author='Jacob M. Johnson',
-    author_email='jake@archive.org',
-    url='https://github.com/jjjake/internetarchive-plugin',
-    license='AGPL 3',
-    description='An example ia-wrapper plugin.',
-    py_modules=['ia_plugin'],
+    author=__author__,
+    author_email=__email__,
+    url=__url__,
+    license=__license__,
+    description=__doc__.splitlines()[0],
+    py_modules=[__title__],
     install_requires=[
         'internetarchive',
     ],
     entry_points={
         'internetarchive.cli.plugins': [
-            'ia_plugin = ia_plugin',
+            __title__ + ' = ' + __title__,
         ],
         'console_scripts': [
-            'ia-plugin = ia_plugin:main',
+            __title__.replace('_', '-') + ' = ' + __title__ + ':main',
         ],
     },
     tests_require=[
